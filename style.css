@@ -23,13 +23,14 @@ h1{
  */
 
 .sidebar h1{
-    margin-bottom: 48px;
+    margin-bottom: 72px;
 }
 
 .sidebar h3{
     border-top: 1px solid #ccc;
     padding-top: 12px;
     font-weight: bold;
+    margin-bottom: 24px;
 }
 
 .sidebar .table{
