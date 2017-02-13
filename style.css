@@ -22,3 +22,16 @@ h1{
  * Sidebar
  */
 
+.sidebar h1{
+    margin-bottom: 48px;
+}
+
+.sidebar h2{
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+}
+
+.sidebar .table{
+    font-size: .9em;
+    font-family: monospace;
+}
