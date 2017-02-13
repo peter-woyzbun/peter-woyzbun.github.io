@@ -1,0 +1,17 @@
+
+/*
+ * Container
+ */
+
+.container-fluid{
+    padding: 48px;
+}
+
+
+/*
+ * Headings
+ */
+
+h1{
+    font-weight: bold;
+}
