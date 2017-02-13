@@ -26,12 +26,18 @@ h1{
     margin-bottom: 48px;
 }
 
-.sidebar h2{
+.sidebar h3{
     border-top: 1px solid #ccc;
     padding-top: 12px;
+    font-weight: bold;
 }
 
 .sidebar .table{
     font-size: .9em;
     font-family: monospace;
+}
+
+.sidebar .table td:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
 }
