@@ -51,7 +51,7 @@ h1{
     border-top: 1px solid #000;
 }
 
-.section-sidebar{
+.section .sidebar{
     border-top: 1px solid #ccc;
     padding-top: 24px;
 }
