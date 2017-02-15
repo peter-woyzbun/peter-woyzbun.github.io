@@ -22,23 +22,36 @@ h1{
  * Sidebar
  */
 
-.sidebar h1{
+.nav-sidebar h1{
     margin-bottom: 72px;
 }
 
-.sidebar h3{
-    border-top: 2px solid #ccc;
+.nav-sidebar h3{
+    border-top: 1px solid #000;
     padding-top: 12px;
     font-weight: bold;
     margin-bottom: 24px;
 }
 
-.sidebar .table{
+.nav-sidebar .table{
     font-size: .9em;
     font-family: monospace;
 }
 
-.sidebar .table td:first-child {
+.nav-sidebar .table td:first-child {
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/*
+ * Content Sections
+ */
+
+.content-section{
+    border-top: 1px solid #000;
+}
+
+.section-sidebar{
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
 }
