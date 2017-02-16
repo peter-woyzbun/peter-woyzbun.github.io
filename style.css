@@ -1,71 +1,90 @@
 
 /*
- * Container
+ * Nav
  */
 
-.container-fluid{
-    padding: 48px;
+.nav{
+    font-family: monospace;
+    width: 100%;
+}
+
+/* hide sidebar sub menus by default */
+#sidebar.nav .nav {
+	display: none;
+    font-size:12px;
+}
+
+#sidebar.nav .nav li:before {
+    content: "↳";
+    float: left;
+    padding-top: 8px;
+    margin-left: -6px;
+}
+
+#sidebar.nav .nav li {
+    padding-left: 32px;
+}
+
+#sidebar li.active {
+}
+
+#sidebar li li.active {
+  	font-weight: bold;
+}
+
+/* show sub menu when parent is active */
+#sidebar.nav>.active>ul {
+	display: block;
+}
+
+/*
+ * Content Container
+ */
+
+.content-container{
+    padding-left: 48px;
+}
+
+/*
+ * Sections
+ */
+
+.section-header{
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #ccc;
+}
+
+.section-header h1{
+    font-weight: bold;
 }
 
 
 /*
- * Headings
+ * Sub Sections
  */
 
-h1{
-    font-weight: bold;
+.sub-section{
+    border-top: 1px solid #ccc;
+    margin-top: 48px;
+}
+
+.sub-section h2{
     margin-top: 0;
-}
-
-
-/*
- * Sidebar
- */
-
-.nav-sidebar h1{
-    margin-bottom: 72px;
-}
-
-.nav-sidebar h3{
-    border-top: 1px solid #000;
-    padding-top: 12px;
-    font-weight: bold;
-    margin-bottom: 24px;
-}
-
-.nav-sidebar .table{
-    font-size: .9em;
-    font-family: monospace;
-}
-
-.nav-sidebar .table td:first-child {
-    text-transform: uppercase;
+    padding-top: 24px;
     font-weight: bold;
 }
 
-/*
- * Content Sections
- */
-
-.content-section{
-    border-top: 1px solid #000;
+.sub-section .title{
+    margin-bottom: 48px;
 }
 
-.section .sidebar{
-    border-top: 1px solid #ccc;
+.sub-section p{
+    font-size: 1.2em;
+    line-height: 1.6em;
 }
 
-.section .sidebar h3{
-    font-weight: bold;
-    margin-bottom: 36px;
-}
-
-.section .sidebar .content-item{
-    font-family: monospace;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #ccc;
-}
-
-.section .content h3{
-    border-top: 1px solid #ccc;
+.sub-section .img-row{
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
