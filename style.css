@@ -1,5 +1,45 @@
 
 /*
+ * Container
+ */
+
+.container-fluid{
+    padding: 24px;
+}
+
+/*
+ * Headings
+ */
+
+
+/*
+ * Sidebar
+ */
+
+#sidebar-container{
+    position: fixed;
+    padding-left: 24px;
+}
+
+.sidebar-title{
+    margin-bottom: 24px;
+}
+
+.sidebar-title h3{
+    font-family: Georgia;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 12px;
+}
+
+.em-dash{
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #5e5e5e;
+}
+
+/*
  * Nav
  */
 
@@ -8,7 +48,9 @@
     width: 100%;
 }
 
-/* hide sidebar sub menus by default */
+#sidebar{
+}
+
 #sidebar.nav .nav {
 	display: none;
     font-size:12px;
@@ -19,6 +61,17 @@
     float: left;
     padding-top: 8px;
     margin-left: -6px;
+    padding-right: 6px;
+}
+
+.nav ul{
+    padding-right: 48px;
+}
+
+.nav>li>a{
+    padding-left: 0;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 #sidebar.nav .nav li {
@@ -32,9 +85,16 @@
   	font-weight: bold;
 }
 
-/* show sub menu when parent is active */
+#sidebar li li{
+    padding-right: 48px;
+}
+
 #sidebar.nav>.active>ul {
 	display: block;
+}
+
+.nav.links-list a{
+    text-decoration: underline;
 }
 
 /*
@@ -42,8 +102,21 @@
  */
 
 .content-container{
-    padding-left: 48px;
+    padding-left: 60px;
+    border-left: 1px solid #ccc;
 }
+
+.content-container h3{
+    font-family: Georgia;
+    font-weight: normal;
+    margin-bottom: 36px;
+    line-height: 1.4em;
+}
+
+.content-container p{
+    line-height: 1.8em;
+}
+
 
 /*
  * Sections
@@ -63,6 +136,16 @@
 /*
  * Sub Sections
  */
+
+.sub-section-header{
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
+    margin-top: 36px;
+}
+
+.sub-section-header h3{
+    font-style: italic;
+}
 
 .sub-section{
     border-top: 1px solid #ccc;
@@ -84,7 +167,11 @@
     line-height: 1.6em;
 }
 
-.sub-section .img-row{
-    padding-top: 48px;
-    padding-bottom: 48px;
+.img-container{
+    margin-top: 24px;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
 }
