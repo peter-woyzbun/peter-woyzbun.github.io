@@ -132,6 +132,19 @@
     font-weight: bold;
 }
 
+/*
+ * About
+ */
+
+.about-links{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.about-links .btn{
+    font-family: monospace;
+}
+
 
 /*
  * Sub Sections
@@ -145,6 +158,15 @@
 
 .sub-section-header h3{
     font-style: italic;
+    font-size: 2.3em;
+}
+
+.sub-section-btns{
+    margin-bottom: 24px;
+}
+
+.sub-section-btns .btn{
+    font-family: monospace;
 }
 
 .sub-section{
@@ -174,4 +196,17 @@
     padding-top: 24px;
     padding-bottom: 24px;
     margin-bottom: 24px;
+}
+
+.demo-gif-row{
+    margin-top: 36px;
+}
+
+.demo-gif{
+    border: 6px solid #000;
+}
+
+.demo-gif-row .desc{
+    font-size: .9em;
+    font-family: monospace;
 }
