@@ -212,6 +212,11 @@
     padding-top: 24px;
 }
 
+.note-nb{
+    font-style: italic;
+    color: #5e5e5e;
+}
+
 /*
  * Query Graph
  */
