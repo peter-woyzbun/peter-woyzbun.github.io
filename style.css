@@ -213,8 +213,11 @@
 }
 
 .note-nb{
+    margin-top: 24px;
+    margin-bottom: 24px;
     font-style: italic;
     color: #5e5e5e;
+    font-size: .9em;
 }
 
 /*
