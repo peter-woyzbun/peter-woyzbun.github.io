@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/prism/prism.css"/>
+    <script type="text/javascript" src="static/prism/prism.js"></script>
 </head>
 <body>
 
@@ -74,7 +76,8 @@
                 </div>
 
                 <!-- Hidden Linkedin iframe for detecting interested parties -->
-                <iframe src="https://www.linkedin.com/in/peter-woyzbun-51441b64/" width="1" height="1" style="border: none;"></iframe>
+                <iframe src="https://www.linkedin.com/in/peter-woyzbun-51441b64/" width="1" height="1"
+                        style="border: none;"></iframe>
 
 
             </div>
@@ -144,13 +147,13 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <p>I wrote this research paper with a classmate for a forth year applied econometrics course at
-                        Queen’s. In it, we use a random-effects gravity model to analyze the migration of Canadians
+                    <p>I wrote this research paper with a classmate for a forth year applied econometrics course. In it,
+                        we use a random-effects gravity model to analyze the migration of Canadians
                         between provinces. We identified “push”, “pull”, and “frictional” factors that impact
                         migration flows. </p>
                     <p>Push factors encourage outflows of migration from a province, pull factors encourage inflows
                         to a province, and frictional factors discourage both. Our findings are summarized in the
-                    figure below.</p>
+                        figure below.</p>
                 </div>
             </div>
 
@@ -177,10 +180,11 @@
             </div>
 
             <div class="row">
-                <div class="col-md-7">
-                    <p>This paper was written for my forth year "economics seminar" class, where we had to do original
+                <div class="col-md-6">
+                    <p>This paper was written for my forth year economics "seminar" class, where we had to do original
                         research and present our findings. In it, I revisit the so-called "Bank of Canada Equation",
-                    a model developed in the early 1990s for describing the behaviour of the CAD/USD exchange rate.</p>
+                        a model developed in the early 1990s for describing the behaviour of the CAD/USD exchange
+                        rate.</p>
                 </div>
             </div>
 
@@ -210,62 +214,66 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <p>Datm is a side project I'm currently working on. It is a graph-based platform/GUI, written in
+                    <p>Datm is a side project I'm currently working on. It is a graph-based, in-browser platform,
+                        written in
                         Python, using the Django web framework, for data manipulation and visualization.</p>
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/dataset_upload.gif" class="demo-gif" />
+                    <img src="images/projects/datm/dataset_upload.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    User adds dataset.
+                    The user creates a project and adds datasets (CSV files), which are represented as nodes on a graph.
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/manipulation_set.gif" class="demo-gif" />
+                    <img src="images/projects/datm/manipulation_set.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    Manipulation set transformation.
+                    The user can apply "transformations" to datasets to create new datasets. A "manipulation set"
+                    transformation is an ordered list of manipulations (similar to R's dplyr package), where each
+                    manipulation type represents a basic verb of data manipulation (e.g. 'select', 'rename').
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/sql.gif" class="demo-gif" />
+                    <img src="images/projects/datm/sql.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    SQL transformation.
+                    The user may also use SQL transformations to create new datasets.
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/join.gif" class="demo-gif" />
+                    <img src="images/projects/datm/join.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    Joining datasets.
+                    Datasets can be easily joined, and joins are displayed as edges on the project graph.
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/generate_source.gif" class="demo-gif" />
+                    <img src="images/projects/datm/generate_source.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    Generating source code.
+                    The user can generate the Python/pandas code required to generate any dataset in their projects.
+                    As such, all transformations/manipulations are reproducible outside of Datm.
                 </div>
             </div>
 
             <div class="row demo-gif-row">
                 <div class="col-md-10">
-                    <img src="images/projects/datm/visualization.gif" class="demo-gif" />
+                    <img src="images/projects/datm/visualization.gif" class="demo-gif"/>
                 </div>
                 <div class="col-md-2 desc">
-                    Visualization.
+                    Any dataset can be easily visualized.
                 </div>
             </div>
 
@@ -287,16 +295,36 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <p>Query Graph is a Python package I've been working on as a side project. It's a framework
-                    for joining data across different types of relational databases (currently supports PostgreSQL, MySQL, Microsoft SQL,
-                        and SQLite).</p>
-                    <p>In Query Graph, each node has a 'query template' for retrieving data from a given database. Query
-                        templates are written in a template language that is a superset of SQL. An edge between
-                        two nodes represents a join.</p>
+                    <p>Query Graph is a Python package I've been working on as a side project. It's a graph based
+                        framework for creating templates for joining data across different types of relational databases
+                        (it currently supports PostgreSQL, MySQL, Microsoft SQL, and SQLite).</p>
+                    <p>The key concept of Query Graph is the relationship between a 'parent' and 'child' query node. A
+                    query node is a single graph node with an associated 'query template'. Query templates are written
+                    in a template language I developed that is a superset of SQL. I cover the language in more detail
+                    a bit later. The figure below outlines how a parent node and child node interact to retrieve data.</p>
                 </div>
             </div>
 
+            <div class="row parent-child-diagram">
+                <div class="col-md-3 diagram-container">
+                    <img src="images/projects/query_graph/parent_child_diagram.png">
+                </div>
+                <div class="col-md-3">
+                    <ol>
+                        <li>The parent node query is executed and data retrieved.</li>
+                        <li>The data output of the parent node is passed to the child node.</li>
+                        <li>The parent node data output is used to "fill in the blanks" of the child node query template, and the child node query is executed.</li>
+                        <li>The child node data is joined with the parent node's data.</li>
+                    </ol>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            
         </div>
     </div>
 
