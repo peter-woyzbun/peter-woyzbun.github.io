@@ -226,6 +226,7 @@
 
 .query-graph-ex-tables{
     margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .query-graph-ex-tables .ex-table{
@@ -263,4 +264,56 @@
 
 .parent-child-diagram .diagram-container{
     text-align: center;
+}
+
+.table-name{
+    font-family: monospace;
+    border: 1px solid #dbdbdb;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.code-row{
+    margin-bottom: 12px;
+}
+
+pre.language-yaml{
+    padding: 0 24px;
+    background-color: #f2f2f2;
+}
+
+code.language-yaml{
+    margin: 0;
+    padding: 0;
+}
+
+code.language-python{
+    margin: 0;
+    padding: 0;
+}
+
+pre.language-python{
+    padding: 0 24px;
+    background-color: #f2f2f2;
+}
+
+.query-graph-ex-diagram{
+    border-top: 1px dotted #ccc;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding-top: 24px;
+}
+
+.query-graph-ex-diagram ol{
+    font-family: monospace;
+}
+
+.query-graph-ex-diagram ol li{
+    margin-bottom: 12px;
+    font-size: .9em;
+}
+
+.query-graph-ex-diagram .diagram-container{
+    text-align: right;
+    padding-left: 48px;
 }

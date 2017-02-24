@@ -5,10 +5,10 @@
     <title>Peter Woyzbun</title>
     <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="static/prism/prism.css"/>
     <script type="text/javascript" src="static/prism/prism.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 
@@ -73,10 +73,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- Hidden Linkedin iframe for detecting interested parties -->
-                <iframe src="http://www.linkedin.com/in/peter-woyzbun-51441b64/" width="1" height="1"
-                        style="border: none;"></iframe>
 
 
             </div>
@@ -214,11 +210,11 @@
             <div class="row">
                 <div class="col-md-6">
                     <p class="note-nb">Note: I will be filling this section in with more detail shortly. I'm currently
-                    working on final documentation for Datm and will be releasing it soon.</p>
+                        working on final documentation for Datm and will be releasing it soon.</p>
                     <p>Datm is a side project I'm currently working on. It is a graph-based, in-browser platform,
                         written in
                         Python, using the Django web framework, for data manipulation and visualization. The GIFs below
-                    demo the main features.</p>
+                        demo the main features.</p>
                 </div>
             </div>
 
@@ -298,36 +294,161 @@
             <div class="row">
                 <div class="col-md-6">
                     <p class="note-nb">Note: I will be filling this section in with more detail shortly. I'm currently
-                    working on final documentation for Query Graph and will be releasing it soon.</p>
-                    <p>Query Graph is a Python package I've been working on as a side project. It's a graph based
+                        working on final documentation for Query Graph and will be releasing it soon.</p>
+                    <p>Query Graph is a Python package I've been working on as a side project. It's a <a
+                            href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)">graph</a> based
                         framework for creating templates for joining data across different types of relational databases
-                        (it currently supports PostgreSQL, MySQL, Microsoft SQL, and SQLite).</p>
-                    <p>The key concept of Query Graph is the relationship between a 'parent' and 'child' query node. A
-                    query node is a single graph node with an associated 'query template'. Query templates are written
-                    in a template language I developed that is a superset of SQL. I cover the language in more detail
-                    a bit later. The figure below outlines how a parent node and child node interact to retrieve data.</p>
+                        (it currently supports PostgreSQL, MySQL, Microsoft SQL, and SQLite). That is, joining data that
+                        cannot be joined using a single SQL query.</p>
+                    <p>To illustrate how Query Graph works, I'll use a simple example. Consider the two databases
+                        outlined below, each with a single table. The databases use different systems, so one might be
+                        MySQL and one might be Postgres. The <span class="table-name">FLIGHTS</span> table contains
+                        arrival delay data for flights departing NYC in 2013. The <span class="table-name">CARRIERS</span>
+                        table maps carrier codes to their actual name.</p>
                 </div>
             </div>
 
-            <div class="row parent-child-diagram">
-                <div class="col-md-3 diagram-container">
-                    <img src="images/projects/query_graph/parent_child_diagram.png">
+            <div class="row query-graph-ex-tables">
+                <div class="col-md-6 ex-table">
+                    <h4>FLIGHTS</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>year</th>
+                            <th>month</th>
+                            <th>day</th>
+                            <th>arr_delay</th>
+                            <th>carrier</th>
+                            <th>origin</th>
+                            <th>dest</th>
+                            <th>hour</th>
+                            <th>minute</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2013</td>
+                            <td>9</td>
+                            <td>30</td>
+                            <td>-35.0</td>
+                            <td>B6</td>
+                            <td>JFK</td>
+                            <td>SFO</td>
+                            <td>20.0</td>
+                            <td>23.0</td>
+                        </tr>
+                        <tr>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="col-md-3">
-                    <ol>
-                        <li>The parent node query is executed and data retrieved.</li>
-                        <li>The data output of the parent node is passed to the child node.</li>
-                        <li>The parent node data output is used to "fill in the blanks" of the child node query template, and the child node query is executed.</li>
-                        <li>The child node data is joined with the parent node's data.</li>
-                    </ol>
+                <div class="col-md-2 col-md-offset-1 ex-table">
+                    <h4>CARRIERS</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>code</th>
+                            <th>name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>b6</td>
+                            <td>JetBlue</td>
+                        </tr>
+                        <tr>
+                            <td>&#8942;</td>
+                            <td>&#8942;</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6">
-
+                    <p>Suppose we want to query the <span class="table-name">FLIGHTS</span> table for flights departing
+                        to certain destinations, and we also want the carrier names. The YAML below represents a query
+                    graph that accomplishes this.</p>
                 </div>
             </div>
+
+            <div class="row code-row">
+                <div class="col-md-6">
+                    <pre><code class="language-yaml">
+DATABASES:
+  flights: [Database credentials]
+  carriers: [Database credentials]
+QUERY_NODES:
+  flights:
+      database: flights
+      query: |
+        SELECT *
+        FROM flights
+        WHERE dest IN {% destinations|value_list:str %}
+      create:
+        carrier_lc: str.lowercase(carrier)
+  carriers:
+    database: carriers
+    parent_node: flights
+    query: |
+      SELECT *
+      FROM carriers
+      WHERE code IN {{ carrier_lc|value_list:str }}
+    join_context:
+      how: left
+      on_columns:
+        carrier_lc: code
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>The code to execute this query graph in Python, for flights departing to San Francisco ('SFO') or
+                        Toronto ('YYZ'), is shown below.</p>
+                </div>
+            </div>
+
+            <div class="row code-row">
+                <div class="col-md-6">
+                    <pre><code class="language-python">
+example_query_graph.execute(destinations=['SFO', 'YYZ'])
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <p>The diagram below breaks down the query graph execution process into each step.</p>
+                </div>
+            </div>
+
+            <div class="row query-graph-ex-diagram">
+                <div class="col-md-3">
+                    <ol>
+                        <li>The FLIGHTS node query is "filled in" with the desired destinations.</li>
+                        <li>The FLIGHTS node query is executed, and a dataframe of results retrieved.</li>
+                        <li>The "carrier_lc" column is created, which is the lowercase carrier codes.</li>
+                        <li>The "carrier_lc" column (unique values) is passed to the CARRIES node.</li>
+                        <li>The CARRIERS node query is "filled in" with the required carrier codes, executed, and a dataframe of results retrieved.</li>
+                        <li>The CARRIERS dataframe is joined with the FLIGHTS dataframe.</li>
+                    </ol>
+                </div>
+                <div class="col-md-9 diagram-container">
+                    <img src="images/projects/query_graph/example_diagram.png">
+                </div>
+            </div>
+
 
         </div>
     </div>
